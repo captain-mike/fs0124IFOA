@@ -1,0 +1,84 @@
+//inccludo i mixins
+@import 'variabili';
+@import 'mixins';
+
+h1{
+    color: $colore;
+    font-size: nth($sizes, 2);//prelevo dalla lista della variabile $sizes il secondo valore
+    @media screen and (min-width: 768px) {
+        color: blue;
+    }
+    @media screen and (min-width: 1280px) {
+        color:chocolate;
+    }
+}
+
+h2{
+    color: map-get($color-map, secondary);//prelevo dalla mappa $color-map il valore legato alla chiave secondary
+    @include breakpoints(768px){
+        color: red;
+    }
+}
+
+h3{
+    //sto utilizzando il mixin chiamato coloriEfont, che non è parametrizzato, quindi non ci sono parentesi tonde
+    @include coloriEFont
+}
+
+//annidamento
+ul{
+
+    li{
+        color: blue;
+        &:hover{//&:hover in questo caso è come scrivere li:hover
+            color: $colore;
+        }
+    }
+    
+}
+
+
+.section-alta{
+    height: 100px;
+}
+.scura{
+    background-color: rgb(79, 7, 3);
+    @include coloreDinamico(rgb(79, 7, 3))
+}
+.chiara{
+    background-color: rgb(98, 89, 219);
+    @include coloreDinamico(rgb(98, 89, 219))
+}
+
+
+.main-div{
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 250px;
+}
+.special-div{
+   @extend .main-div;//importo tutte le regole di main div
+   float: right;//questa regola andrà in conflitto con quel che viene importato da .main-div e il conflitto si risolve a favore di float:right
+}
+
+
+$misure: 15, 30, 45;
+
+//questo ciclo crea 4 classi per ogni misura della lista $misure
+@each $m in $misure{
+
+    .mt-#{$m}{//mt-15, mt-30, mt-45
+        margin-top: $m + px;//concatenare pc è necessario per specificare l'unità di misura, altrimenti mancante
+    }
+    .mb-#{$m}{//mt-15, mt-30, mt-45
+        margin-bottom: $m + px;
+    }
+    .ml-#{$m}{//mt-15, mt-30, mt-45
+        margin-left: $m + px;
+    }
+    .mr-#{$m}{//mt-15, mt-30, mt-45
+        margin-right: $m + px;
+    }
+
+}

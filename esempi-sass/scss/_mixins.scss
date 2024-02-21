@@ -1,0 +1,22 @@
+@mixin coloriEFont{
+    color: blueviolet;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@mixin coloreDinamico($colore){
+
+    @if(lightness($colore) > 50){
+        color: darken($colore, 15);
+    }@else{
+        color: lighten($colore, 15);
+    }
+
+}
+
+@mixin breakpoints($misura){
+
+    @media screen and (min-width:$misura){
+        @content;
+    }
+
+}

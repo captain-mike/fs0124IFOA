@@ -1,0 +1,10 @@
+$colore: red;
+
+//lista di valori = array
+$sizes: 12px, 30px;//nth()
+
+//map = simile ad un oggetto
+$color-map: (
+    primary : blue,
+    secondary: grey
+)//map-get()

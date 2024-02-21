@@ -1,0 +1,110 @@
+h1 {
+  color: red;
+  font-size: 30px;
+}
+@media screen and (min-width: 768px) {
+  h1 {
+    color: blue;
+  }
+}
+@media screen and (min-width: 1280px) {
+  h1 {
+    color: chocolate;
+  }
+}
+
+h2 {
+  color: grey;
+}
+@media screen and (min-width: 768px) {
+  h2 {
+    color: red;
+  }
+}
+
+h3 {
+  color: blueviolet;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+ul li {
+  color: blue;
+}
+ul li:hover {
+  color: red;
+}
+
+.section-alta {
+  height: 100px;
+}
+
+.scura {
+  background-color: rgb(79, 7, 3);
+  color: #990e06;
+}
+
+.chiara {
+  background-color: rgb(98, 89, 219);
+  color: #3429be;
+}
+
+.main-div, .special-div {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 250px;
+}
+
+.special-div {
+  float: right;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.ml-15 {
+  margin-left: 15px;
+}
+
+.mr-15 {
+  margin-right: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mt-45 {
+  margin-top: 45px;
+}
+
+.mb-45 {
+  margin-bottom: 45px;
+}
+
+.ml-45 {
+  margin-left: 45px;
+}
+
+.mr-45 {
+  margin-right: 45px;
+}
+
+/*# sourceMappingURL=style.css.map */
