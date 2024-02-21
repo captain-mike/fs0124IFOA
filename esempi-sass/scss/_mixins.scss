@@ -4,11 +4,11 @@
 }
 
 @mixin coloreDinamico($colore){
-
-    @if(lightness($colore) > 50){
-        color: darken($colore, 15);
+//questo mixin valta se il colore in ingresso è scuro o chiaro e decide di scurirlo o schiarirlo in base ai casi
+    @if(lightness($colore) > 50){//lightness valuta un colore e restituisce la percentuale di chiarezza
+        color: darken($colore, 15);//darken scurisce il colore preso in esame, il secondo parametro definisce quanto verrà scurito
     }@else{
-        color: lighten($colore, 15);
+        color: lighten($colore, 15);//lighten schiarisce il colore preso in esame, il secondo parametro definisce quanto verrà schiarito
     }
 
 }
@@ -16,7 +16,7 @@
 @mixin breakpoints($misura){
 
     @media screen and (min-width:$misura){
-        @content;
+        @content;//content è ciò che si trova tra le parentesi graffe affiancate al mixin in fase di utilizzo del mixin stesso
     }
 
 }
